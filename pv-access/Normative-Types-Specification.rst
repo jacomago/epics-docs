@@ -2394,8 +2394,8 @@ and is presented in the details page as type DBR_V4_GENERIC_BYTES.
 
    structure
        structure_t    value
+       time_t      timeStamp
        alarm_t     alarm       :opt
-       time_t      timeStamp   :opt
 
 where:
 
