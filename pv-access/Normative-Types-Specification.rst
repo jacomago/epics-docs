@@ -2380,6 +2380,30 @@ nanoseconds
 userTag
    The ``userTag`` field of the timestamp associated with each channel.
 
+NTStructure
+~~~~~~~~~~~
+
+NTStructure is the EPICS V4 Normative Type that describes a structured set of fields.
+It is the type that is currently supported to be archived in the EPICS Archiver Appliance,
+and is presented in the details page as type DBR_V4_GENERIC_BYTES.
+
+
+::
+
+   NTStructure :=
+
+   structure
+       structure_t    value
+       alarm_t     alarm       :opt
+       time_t      timeStamp   :opt
+
+where:
+
+value
+   The primary data carried by the NTStructure object. The field must be
+   named "value" and can be of any simple structure type as defined above.
+
+
 Appendix B: Normative Type Identifiers
 --------------------------------------
 
