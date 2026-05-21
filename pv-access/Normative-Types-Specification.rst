@@ -2384,9 +2384,11 @@ NTStructure
 ~~~~~~~~~~~
 
 NTStructure is the EPICS V4 Normative Type that describes a structured set of fields.
-It is the type that is currently supported to be archived in the EPICS Archiver Appliance,
-and is presented in the details page as type DBR_V4_GENERIC_BYTES.
+In some sense it is a supertype of many of the other Normative Types.
 
+Use cases: Currently used in the EPICS Archiver Appliance for archiving structured data 
+with the prerequisite that the timestamp is required. The archiver type displyed in the Archiver
+when it has determined a PV to be of this type is DBR_V4_GENERIC_BYTES.
 
 ::
 
@@ -2394,7 +2396,7 @@ and is presented in the details page as type DBR_V4_GENERIC_BYTES.
 
    structure
        structure_t    value
-       time_t      timeStamp
+       time_t      timeStamp   :opt
        alarm_t     alarm       :opt
 
 where:
@@ -2402,6 +2404,10 @@ where:
 value
    The primary data carried by the NTStructure object. The field must be
    named "value" and can be of any simple structure type as defined above.
+alarm
+   The alarm associated with the NTStructure itself.
+timeStamp
+   The timestamp associated with the NTStructure.
 
 
 Appendix B: Normative Type Identifiers
